@@ -1,0 +1,8 @@
+{
+  "migration_id": "migration-demo-01",
+  "operation": "drop-column",
+  "table": "bookings",
+  "column": "legacy_status",
+  "old_app_uses_column": true,
+  "approval": "required"
+}
