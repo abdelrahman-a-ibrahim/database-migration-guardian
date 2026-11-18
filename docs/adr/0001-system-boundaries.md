@@ -1,28 +1,22 @@
 # ADR 0001: System boundaries and implementation approach
 
-Status: proposed / decision not yet made.
+Status: proposed.
 
 ## Context
-Build a migration assessment tool for the WorkshopHub PostgreSQL database. Compare direct execution, expand/contract and blue/green migration approaches using synthetic bookings and a workload generator.
+A migration-assessment tool for evaluating schema changes against application compatibility, lock behavior and recovery constraints. Planned workflows cover direct execution, expand/contract changes and selected blue/green migration scenarios. Unknown operations require explicit review.
 
-## Decision questions
+## Questions
 - Risk rubric scope and false-negative handling
 - Expand/contract versus blue/green
 - Cutover write control and recovery limits
 
-## Options
-1. Small local implementation with synthetic adapters.
-2. Integrated lab with real dependencies in a disposable environment.
-3. A justified alternative to be supplied during design.
+## Alternatives
+- A local implementation with synthetic external adapters.
+- An integrated deployment with real dependencies in an isolated environment.
+- A smaller implementation that preserves the core invariant.
 
 ## Decision
-Pending. Start by evaluating the smallest approach that can demonstrate the core invariant.
+Pending. Record the selected option, rejected alternatives and rationale before implementing external adapters.
 
-## Consequences to assess
-Correctness, complexity, cost, recovery, trust boundaries, portability and maintenance burden.
-
-## Evidence needed
-A failure experiment, a working implementation slice and a comparison of the alternatives.
-
-## Revisit when
-Document a concrete load, team, correctness or operational constraint that invalidates the selected approach.
+## Consequences
+Assess correctness, operational complexity, cost, security boundaries, recovery and maintenance. Define the concrete constraint that would justify revisiting the decision.
